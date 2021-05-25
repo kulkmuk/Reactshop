@@ -1,13 +1,189 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.triangle-left {
+    display: -moz-inline-box;
+    width: 5%;
+    height: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.triangle-left:after {
+    content: "";
+    display: inside;
+    width: 10;
+    height: 10;
+    margin-top: -500px;
+    border-top: 500px solid;
+    border-bottom: 500px solid;
+    border-right: 500px solid #1e4d8a;
+}
+
+.mainheader {
+    background-color: rgb(0, 0, 0);
+    float: center;
+    width: 80%;
+}
+
+.accessorieslist {
+    color: gray;
+}
+
+.courselist1 {
+    width: 100%;
+    display: inline-table;
+    background-image: linear-gradient(rgb(59, 54, 54), rgb(59, 54, 54));
+    border: 2px solid rgb(59, 54, 54);
+    border-radius: 5px;
+}
+
+.courselist2 {
+    width: 5%;
+    display: inline-table;
+    position: relative;
+    height: 80px;
+    display: inline-table;
+    border: solid 1px #ccc;
+    border-right: none;
+    background: rgb(121, 111, 111) linear-gradient(rgb(32, 31, 31), #131111 37%, #000000 57%);
+    cursor: pointer;
+}
+
+.arrow-left {
+    width: 500px;
+    height: 500px;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-right: 10px solid blue;
+}
+
+.box {
+    width: 150px;
+    height: 75px;
+    background-color: rgb(5, 4, 4);
+    color: #fff;
+    /* padding: 20px; */
+    position: relative;
+    margin: 40px;
+    /* float: left; */
+}
+
+.buttonlistoff {
+    OPACITY: 0.5;
+    BACKGROUND: #303030;
+    COLOR: white
+}
+
+.courselist3 {
+    height: 100px;
+}
+
+.buttonliston {
+    COLOR: lightseagreen;
+    BACKGROUND: #303030;
+    OPACITY: 0.5;
+}
+
+.heading {
+    text-align: center;
+    PADDING: 17px;
+    border: 10px solid black;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.courselist {
+    /*background-color: rgb(66, 60, 60);*/
+    text-align: left;
+    background: #000000;
+    color: rgb(212, 202, 202);
+    padding: 10px;
+    margin: 10px;
+    height: 30%;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.triangle {
+    /* sample positioning */
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    /*
+   * deprecated syntax has better browser support
+   * IE8+
+   * http://css-tricks.com/almanac/properties/c/clip/
+   */
+    clip: rect(auto, 180px, auto, 100px);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.triangle::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    /**
+   * To also support IE 9 we you a background images
+   * as fallback, created via compass:
+   * @include background-image(linear-gradient(300deg, green, blue));
+   */
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjEuMDkxNTA2IiB5MT0iMC44NDE1MDYiIHgyPSItMC4wOTE1MDYiIHkyPSIwLjE1ODQ5NCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwODAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -moz-linear-gradient(150deg, green, blue);
+    background-image: -webkit-linear-gradient(150deg, green, blue);
+    background-image: linear-gradient(300deg, green, blue);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.rectangle {
+    float: left;
+    position: relative;
+    height: 80px;
+    width: 240px;
+    border: solid 1px #ccc;
+    border-right: none;
+    background: #eee linear-gradient(#ed1c24, #ed1c24 37%, #af001a 57%, #af001a);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.rectangle:after {
+    position: absolute;
+    top: 16px;
+    right: -25px;
+    width: 48px;
+    height: 47px;
+    border-left: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+    background: #eee linear-gradient(45deg, #ed1c24, #ed1c24 37%, #af001a 57%, #af001a);
+    content: '';
+    z-index: 0;
+}
+
+.triangle {
+    height: 0;
+    width: 0;
+    border-left: 100px solid #ff4136;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 100px solid transparent;
 }
